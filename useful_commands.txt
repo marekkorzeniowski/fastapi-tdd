@@ -1,6 +1,12 @@
+### docker compose
 # Connect to db in container
  docker compose exec web-db psql -U postgres
 
+# tun tests
+docker compose exec web python -m pytest
+
+
+### Postgres
  ## Inside postgres - connect to db
  \c web_db
 
