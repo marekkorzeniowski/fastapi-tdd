@@ -1,0 +1,14 @@
+# Connect to db in container
+ docker compose exec web-db psql -U postgres
+
+ ## Inside postgres - connect to db
+ \c web_db
+
+ ## postgres Quit
+ \q
+
+## list tables
+\dt
+
+
+
