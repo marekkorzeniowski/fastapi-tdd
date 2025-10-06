@@ -12,3 +12,11 @@
 
 
 
+### Aerich - db migration (schema change)
+# aerich init to create pyproject.toml
+docker compose exec web aerich init -t app.db.TORTOISE_ORM
+
+# aerich 1s migration
+docker compose exec web aerich init-db
+
+
