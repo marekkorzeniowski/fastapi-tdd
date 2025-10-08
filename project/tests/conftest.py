@@ -4,6 +4,7 @@ import pytest
 from starlette.testclient import TestClient
 from tortoise.contrib.fastapi import register_tortoise
 
+from app.api import summaries
 from app.main import create_application  # updated
 from app.config import get_settings, Settings
 
@@ -43,3 +44,7 @@ def test_app_with_db():
         yield test_client
 
     # tear down
+
+@pytest.fixture()
+def patched_summary(monkeypatch):
+    monkeypatch.setattr(summaries, "generate_summary", lambda x, y: None)
